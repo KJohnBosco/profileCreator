@@ -1,0 +1,16 @@
+{
+  "name": "profilescreator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "sass": "sass -w ./SASS/main.scss:./CSS/style.css --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "sass": "^1.99.0"
+  }
+}
