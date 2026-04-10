@@ -369,6 +369,9 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+  p {
+    font-size: clamp(0.5rem, 6vw, 0.9rem);
+  }
 }
 
 @media (max-width: 400px) {
