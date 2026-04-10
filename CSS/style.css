@@ -134,6 +134,9 @@ main #employeeCardsContainer .card {
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3137254902);
   cursor: pointer;
 }
+main #employeeCardsContainer .card > p:last-child {
+  font-size: clamp(0.7rem, 6vw, 1rem);
+}
 main #employeeCardsContainer .card * {
   pointer-events: none;
 }
