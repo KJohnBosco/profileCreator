@@ -1,8 +1,342 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  background-color: #fff;
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header .contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #05000e;
+  color: #fff;
+  padding: 0 15px;
+}
+header .contents h1 {
+  font-size: clamp(0.9rem, 3vw, 1.4rem);
+}
+header .contents > p {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-weight: 900;
+  color: #fff;
+}
+header .contents div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .contents div svg {
+  width: 40px;
+  background-color: #f3f3f3;
+  border-radius: 50%;
+}
+header .contents div .menu {
+  width: 35px;
+  height: 35px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+header .contents div .menu div {
+  transition: all 0.5s ease;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+header .contents div .menu:hover {
   background-color: #ff4501;
+}
+header .contents div .menu:hover div {
+  background-color: #fff;
+}
+
+main aside {
+  background-color: rgba(5, 0, 14, 0.6784313725);
+  width: 60px;
+  height: 80vh;
+  position: fixed;
+  right: 10px;
+  margin: 2% auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 1s;
+  transform: scale(0);
+}
+main aside span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 0;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+main aside span * {
+  pointer-events: none;
+}
+main aside span:hover {
+  background-color: #f3f3f3;
+  color: #000;
+}
+main #employeeCardsContainer {
+  padding: 50px 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+main #employeeCardsContainer .card {
+  min-width: 200px;
+  background-color: #f3f3f3;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 0;
+  border-radius: 10px;
+  gap: 5px;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3137254902);
+  cursor: pointer;
+}
+main #employeeCardsContainer .card * {
+  pointer-events: none;
+}
+main #employeeCardsContainer .card:nth-child(odd) {
+  background-color: #ff4501;
+}
+main #employeeCardsContainer .card:nth-child(even) {
+  background-color: blue;
+}
+main #employeeCardsContainer .card h2 {
+  font-weight: bold;
+}
+main #employeeCardsContainer .card > img {
+  width: 150px;
+  height: 150px;
+  border: 2px solid;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+}
+main #newEmp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+main #newEmp * {
+  z-index: 10;
+}
+main #newEmp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 0, 14, 0.5019607843);
+  filter: blur(5px);
+}
+main #newEmp form {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+  background-color: #05000e;
+  padding: 10px;
+  border-radius: 10px;
+}
+main #newEmp form input {
+  border-radius: 10px;
+  border: none;
+  line-height: 1.2rem;
+  padding: 0 10px;
+}
+main #newEmp form img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+main #newEmp form #uploadImageInput {
+  display: none;
+}
+main #newEmp form div {
+  display: flex;
+  gap: 10px;
+}
+main #newEmp form button {
+  width: 50%;
+  margin: auto auto;
+  font-weight: 900;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+main #newEmp form button:hover {
+  background-color: lime;
+}
+main #newEmp form button:last-child:hover {
+  background-color: red;
+}
+
+#introMessage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+#introMessage::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 0, 14, 0.8549019608);
+  z-index: -1;
+}
+#introMessage #msgContents {
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+  transform: scale(0);
+  transition: all 1s;
+}
+#introMessage #msgContents > h2 {
+  color: aqua;
+  font-size: clamp(1.5rem, 10vw, 2rem);
+}
+#introMessage #msgContents > div {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  line-height: 1.5rem;
+  box-shadow: 2px 2px 5px #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#introMessage #msgContents > div h2 {
+  text-align: center;
+  font-weight: 900;
+  color: #ff4501;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+#introMessage #msgContents > div > p {
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  opacity: 60%;
+}
+#introMessage #msgContents > div h3 {
+  color: #ff4501;
+}
+#introMessage #msgContents > div li {
+  margin-top: 2px;
+  padding: 2px 15px;
+  border-radius: 5px;
+  color: #fff;
+  background-image: linear-gradient(to right, blue, blue, transparent);
+}
+#introMessage #msgContents #introBtn {
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+#introMessage #msgContents #introBtn:hover {
+  box-shadow: 0px 0px 5px aqua;
+}
+
+#infoBtn {
+  position: fixed;
+  right: 5vw;
+  bottom: 0;
+  margin-bottom: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid blue;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5647058824);
+  cursor: pointer;
+}
+#infoBtn:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+footer {
+  color: #000;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  header .contents > p {
+    width: 35px;
+    height: 25px;
+  }
+  header .contents div svg {
+    width: 30px;
+  }
+  header .contents div .menu {
+    width: 25px;
+    height: 25px;
+  }
 }
