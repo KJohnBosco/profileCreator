@@ -135,7 +135,7 @@ main #employeeCardsContainer .card {
   cursor: pointer;
 }
 main #employeeCardsContainer .card > p:last-child {
-  font-size: clamp(0.7rem, 6vw, 1rem);
+  font-size: clamp(0.3rem, 6vw, 1rem);
 }
 main #employeeCardsContainer .card * {
   pointer-events: none;

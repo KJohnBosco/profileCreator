@@ -151,7 +151,7 @@ main {
 
       & > p {
         &:last-child {
-          font-size: clamp(0.7rem, 6vw, 1rem);
+          font-size: clamp(0.3rem, 6vw, 1rem);
         }
       }
 
