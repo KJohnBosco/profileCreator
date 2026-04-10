@@ -329,7 +329,7 @@ footer {
 
 @media (max-width: 400px) {
   header .contents {
-    padding: 5px 0;
+    padding: 5px 15px;
   }
   header .contents > p {
     width: 35px;
