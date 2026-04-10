@@ -94,6 +94,7 @@ optMenu.addEventListener("click", (e) => {
   switch (e.target.dataset.role) {
     case "add":
       newEmp.style.display = "flex";
+      optMenu.style.transform = "scale(0)";
       break;
     case "edit":
       alert("Edit functionality in progress");
